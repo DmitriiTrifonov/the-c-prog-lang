@@ -8,7 +8,7 @@ int main() {
     upper = 300;
     step = 20;
 
-    fahr = lower;
+    fahr = lower; // set fahrenheit to 0
     printf("This is a temperature conversion table:\n");
     printf("Fahrnheit\tCelsius\n"); // \t is used for tab
     while (fahr <= upper) {
