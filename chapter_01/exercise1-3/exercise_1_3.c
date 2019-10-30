@@ -1,8 +1,6 @@
 #include <stdio.h>
 
-
-int main()
-{
+int main() {
     float fahr, celsius;
     int lower, upper, step;
 
@@ -12,11 +10,10 @@ int main()
 
     fahr = lower;
     printf("This is a temperature conversion table:\n");
-    printf("Fahrnheit\tCelsius\n");
-    while (fahr <= upper)
-    {
-        celsius = (5.0 / 9.0) * (fahr - 32.0);
-        printf("%3.0f\t\t%6.1f\n",fahr, celsius);
+    printf("Fahrnheit\tCelsius\n"); // \t is used for tab
+    while (fahr <= upper) {
+        celsius = (5.0 / 9.0) * (fahr - 32.0); // conversion formula 
+        printf("%3.0f\t\t%6.1f\n",fahr, celsius); // formatted output
         fahr = fahr + step;
     }
     return 0;
