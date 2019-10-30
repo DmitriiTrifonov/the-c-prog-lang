@@ -4,6 +4,33 @@ _I'm using GCC and sometimes clang as c compilers_
 
 I have wrote a Kotlin program to generate C code and save as separate .c files.
 After that i've wrote a bash script to compile all of theese files.
+Program iterates from `!` to `~` without upper case letters and sings from the book.
+
+Kotlin code:
+```Kotlin
+import java.io.File
+
+fun main() {
+
+    var index = 1
+    for (s in '!'..'~') {
+        if (s == 'n' || s == '\\' || s == 't' || s == 'b' || s == '\"'|| s.isUpperCase()) continue
+        val filename = "${index.toString().padStart(2,'0')}.c"
+        var file = File(filename)
+        val code = """
+        #include <stdio.h>
+        
+        int main() {
+            printf("test escape \\$s : \$s");
+            return 0;
+        }
+        """.trimIndent()
+        file.writeText(code)
+        index++
+    }
+}
+```
+#### Generated C files:
 
 ```C    
 // File: 01.c Symbol: !
@@ -759,7 +786,7 @@ int main() {
 }
 ```
 
-Compile results.
+#### Compile results:
 _Note: empty result is full compilation_
 
 ```bash
@@ -1193,7 +1220,7 @@ compiling file 63.c
             ^~~~~~~~~~~~~~~~~~~~~~
 ```
 
-The result is
+#### Run result:
 ```bash
 
 $ ./01
@@ -1380,3 +1407,5 @@ $./63
 test escape \~ : ~
 
 ```
+
+_Note: Some output isn't correct for escaping wit numbers_
