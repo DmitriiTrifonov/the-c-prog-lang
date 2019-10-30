@@ -1,12 +1,9 @@
 #include <stdio.h>
 
-
-int main()
-{
+int main() {
     int c, tc = 0, ec = 0, sc = 0;
 
-    while ((c = getchar()) != EOF)
-    {
+    while ((c = getchar()) != EOF) {
         if (c == '\t') ++tc;
         if (c == ' ') ++sc;
         if (c == '\n') ++ec;
