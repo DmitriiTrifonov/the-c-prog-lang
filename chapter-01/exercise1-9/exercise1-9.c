@@ -1,14 +1,11 @@
 #include <stdio.h>
 
-
-int main()
-{
+int main() {
     char c;
-    while ((c = getchar()) != EOF){
-        if (c == ' ')
-        {
+    while ((c = getchar()) != EOF) {
+        if (c == ' ') {
             putchar(c);
-            // while getchar getting space to std out goes empty symbol
+            // while getchar getting space empty symbol goes to std out
             while ((c = getchar()) == ' ')
                 putchar(0);
         }
