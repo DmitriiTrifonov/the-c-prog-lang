@@ -1,4 +1,4 @@
-# Exercise 1-2
+# Exercise 1-02
 
 _I'm using GCC and sometimes clang as c compilers_
 
